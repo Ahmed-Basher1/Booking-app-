@@ -9,9 +9,6 @@ const {
   logout,
 } = require('../controllers/authController');
 
-router.get('/', (req, res) => {
-  res.send('Hello, this is auth');
-});
 router.post('/register', register);
 router.post('/login', login);
 router.post('/verify-email', verifyEmail);

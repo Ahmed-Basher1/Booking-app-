@@ -12,8 +12,8 @@ app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
 app.use('/api/auth', authRoute);
 app.use('/api/hotels', hotelsRoute);
- //app.use('/api/rooms', roomsRoute);
- app.use('/api/users', usersRoute);
+app.use('/api/rooms', roomsRoute);
+app.use('/api/users', usersRoute);
 const port = process.env.PORT || 5000;
 
 // not found middleware

@@ -13,5 +13,5 @@ const {
 
 router.post('/', createHotel);
 router.route('/:id').get(getHotelById).put(updateHotel);
-router.get('/', getAllHotels);
+router.get('/', authenticateUser, authorizePermissions, getAllHotels);
 module.exports = router;
