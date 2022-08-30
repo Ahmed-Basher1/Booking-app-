@@ -9,9 +9,17 @@ const {
   updateHotel,
   getAllHotels,
   getHotelById,
+  getHotels,
+  countByCity,
+  countByType,
+  getHotelRooms,
 } = require('../controllers/hotelController');
 
 router.post('/', createHotel);
-router.route('/:id').get(getHotelById).put(updateHotel);
-router.get('/', authenticateUser, authorizePermissions, getAllHotels);
+router.route('/find/:id').get(getHotelById).put(updateHotel);
+// router.get('/', authenticateUser, authorizePermissions, getAllHotels);
+router.get('/', getHotels);
+router.get('/countByCity', countByCity);
+router.get('/countByType', countByType);
+router.get('/room/:id', getHotelRooms);
 module.exports = router;
